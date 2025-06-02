@@ -1,23 +1,30 @@
 #include <iostream>
 using namespace std;
 
-struct mahasiswa{
+struct Mahasiswa {
     string nim;
     string nama;
     string alamat;
     float ipk;
 };
 
-int main(){
-mahasiswa doni;
+int main() {
+    Mahasiswa doni;
 
-doni.nim="c03030303";
-doni.nama="doni ajah";
-doni.alamat="jl. alamat selesai sekarang";
-doni.ipk=3.7;
+    // pointer ke struct Mahasiswa
+    Mahasiswa* ptrDoni = &doni;
 
-cout << doni.nim<<"\n";
-cout << doni.nama<<"\n";
-cout << doni.alamat<<"\n";
-cout << doni.ipk<<"\n";
+    // mengisi data melalui pointer
+    ptrDoni->nim = "C030324018";
+    ptrDoni->nama = "Gean Prana Daniswara";
+    ptrDoni->alamat = "jl. alamat selesai sekarang";
+    ptrDoni->ipk = 3.7;
+
+    // menampilkan data melalui pointer
+    cout << "NIM    : " << ptrDoni->nim << "\n";
+    cout << "Nama   : " << ptrDoni->nama << "\n";
+    cout << "Alamat : " << ptrDoni->alamat << "\n";
+    cout << "IPK    : " << ptrDoni->ipk << "\n";
+
+    return 0;
 }
