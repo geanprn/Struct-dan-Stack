@@ -97,3 +97,46 @@ void TampilMenu() {
     cout << "5. Keluar\n";
     cout << "Pilih menu (1-5): ";
 }
+
+int main() {
+    Stack S;
+    Inisialisasi(&S);
+
+    char pilihan;
+
+    do {
+        TampilMenu();
+        pilihan = getch();
+        cout << pilihan << "\n";
+
+        switch (pilihan) {
+            case '1':
+                InputData(&S);
+                break;
+            case '2':
+                system("cls");
+                Pop(&S);
+                getch();
+                break;
+            case '3':
+                system("cls");
+                Tampil(&S);
+                getch();
+                break;
+            case '4':
+                Info();
+                break;
+            case '5':
+                break;
+            default:
+                system("cls");
+                cout << "Pilihan tidak valid!\n";
+                getch();
+                break;
+        }
+
+    } while (pilihan != '5');
+
+    cout << "Program selesai. Terima kasih!\n";
+    return 0;
+}
