@@ -33,3 +33,32 @@ void Push(Stack *S, ItemType nilai) {
         cout << "Data " << nilai << " berhasil dimasukkan.\n";
     }
 }
+
+void Pop(Stack *S) {
+    if (Empty(S)) {
+        cout << "Stack kosong! Tidak bisa melakukan pop.\n";
+    } else {
+        cout << "Data " << S->data[S->top] << " telah di-pop.\n";
+        S->top--;
+    }
+}
+
+void Tampil(Stack *S) {
+    if (Empty(S)) {
+        cout << "Stack kosong!\n";
+    } else {
+        cout << "Isi stack (bawah ke atas): ";
+        for (int i = 0; i <= S->top; i++) {
+            cout << S->data[i] << " ";
+        }
+        cout << "\n";
+    }
+}
+
+void Info() {
+    system("cls");
+    cout << "Nama  : Gean Prana Daniswara\n";
+    cout << "NIM   : C030324018\n";
+    cout << "Kelas : TI-2B\n";
+    getch();
+}
