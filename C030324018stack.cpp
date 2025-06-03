@@ -62,3 +62,38 @@ void Info() {
     cout << "Kelas : TI-2B\n";
     getch();
 }
+
+void InputData(Stack *S) {
+    char ulang;
+    ItemType nilai;
+
+    do {
+        system("cls");
+        cout << "Masukkan data (angka): ";
+        cin >> nilai;
+        Push(S, nilai);
+
+        if (Full(S)) {
+            cout << "Stack sudah penuh!\n";
+            break;
+        }
+
+        cout << "Tambah data lagi? (y/n): ";
+        ulang = getch();
+        cout << ulang << "\n";
+
+    } while (ulang == 'y' || ulang == 'Y');
+
+    getch();
+}
+
+void TampilMenu() {
+    system("cls");
+    cout << "====== PROGRAM STACK SESUAI MATERI ======\n";
+    cout << "1. Push (Input Data)\n";
+    cout << "2. Pop (Ambil Data Teratas)\n";
+    cout << "3. Tampilkan Isi Stack\n";
+    cout << "4. Informasi Pembuat\n";
+    cout << "5. Keluar\n";
+    cout << "Pilih menu (1-5): ";
+}
